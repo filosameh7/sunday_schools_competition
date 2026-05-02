@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Cairo:wght@400;600;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0f0a1e;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+/* Scrollbar hide */
+::-webkit-scrollbar { display: none; }
+
+/* Glow utilities */
+.glow-gold {
+  box-shadow: 0 0 12px #facc15, 0 0 30px #f59e0b;
+}
+.glow-blue {
+  box-shadow: 0 0 12px #60a5fa, 0 0 30px #3b82f6;
+}
+.glow-green {
+  box-shadow: 0 0 12px #4ade80, 0 0 30px #22c55e;
+}
+.glow-red {
+  box-shadow: 0 0 12px #f87171, 0 0 30px #ef4444;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Game button base */
+.btn-game {
+  @apply font-game rounded-2xl px-6 py-3 text-lg font-bold transition-all duration-150 active:scale-95 select-none cursor-pointer;
+}
+
+/* Character bounce effect */
+@keyframes characterBounce {
+  0%   { transform: scaleY(1) translateY(0); }
+  30%  { transform: scaleY(0.85) translateY(4px); }
+  60%  { transform: scaleY(1.15) translateY(-18px); }
+  80%  { transform: scaleY(0.95) translateY(-5px); }
+  100% { transform: scaleY(1) translateY(0); }
+}
+
+.character-bounce {
+  animation: characterBounce 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* Stars / particles */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+/* Path dots pulse */
+@keyframes pathPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.3); opacity: 1; }
+}
+
+.path-dot-active { animation: pathPulse 1s ease-in-out infinite; }
+
+/* Smooth cloud drift */
+@keyframes cloudDrift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-120px); }
+}
+.cloud-drift { animation: cloudDrift 18s linear infinite alternate; }
+.cloud-drift-slow { animation: cloudDrift 28s linear infinite alternate-reverse; }
