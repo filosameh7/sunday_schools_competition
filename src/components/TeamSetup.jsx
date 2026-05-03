@@ -147,8 +147,6 @@ export default function TeamSetup() {
           transition={{ delay: 0.8 }}
           className="mt-4 flex gap-4 text-sm text-blue-200 font-arabic"
         >
-          <span>📖 42 سؤال</span>
-          <span>•</span>
           <span>🗺️ 8 خطوات</span>
           <span>•</span>
           <span>⚡ تحديات خاصة</span>
